@@ -1,0 +1,16 @@
+{
+	"name": "mura-impersonate-nuxt",
+	"version": "1.0.0",
+	"description": "",
+	"main": "lib/module.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Luke Wilson <luke@lukewilson.net> (http://www.lukewilson.net)",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"cookie-universal": "^2.1.4",
+		"cookie-universal-nuxt": "^2.1.4"
+	}
+}
