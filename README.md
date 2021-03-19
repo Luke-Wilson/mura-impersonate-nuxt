@@ -70,6 +70,7 @@ env: {
 modules: [
 	"mura-impersonate-nuxt"
 ]
+```
 
 9. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
 ``` 
