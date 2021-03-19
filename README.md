@@ -1,7 +1,7 @@
 # mura-impersonate-nuxt
 A package that allows a Mura super user to impersonate other Mura users.
 
-
+** NOTE: This feature currently works in Safari, but not Chrome **
 ## Before you start
 Create a Mura-Nuxt project by following the instructions at https://github.com/murasoftware/mura-nuxtjs-decoupled.git
 
