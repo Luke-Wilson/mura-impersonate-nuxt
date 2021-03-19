@@ -8,6 +8,8 @@ Create a Mura-Nuxt project by following the instructions at https://github.com/m
 Once you have your Mura-Nuxt implementation working, you can follow the below steps.
 
 ## Getting started
+Here's a video of me going through the below steps: https://www.loom.com/share/6b1ae4fccf474e12923a794961dac87f
+
 1. Install mura-impersonate-nuxt into your nuxtjs directory
 ```
 cd /path/to/nuxtjs
@@ -96,6 +98,13 @@ export default {
 </script>
 
 ```
+
+10. Start your Nuxt dev server
+```
+npm run dev
+```
+
+11. Login to Mura as a super user, then visit the /impersonate page and enter another user's username.
 
 ### Relevant directory structure
 ```
