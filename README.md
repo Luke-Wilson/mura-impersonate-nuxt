@@ -64,7 +64,13 @@ env: {
 }
 ```
 
-8. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
+8. In your `nuxt.config.js` add `mura-impersonate-nuxt` to the `modules` section:
+```
+modules: [
+	"mura-impersonate-nuxt"
+]
+
+9. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
 ``` 
 <template>
 <div>
