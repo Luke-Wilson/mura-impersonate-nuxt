@@ -46,8 +46,9 @@ volumes:
 	- mura_nuxtjs_decoupled_sites:/var/www/sites
 ```
 
-5. Start your Docker containers:
+5. Rebuild and restart your Docker containers:
 ```
+docker-compose down
 docker-compose up -d
 ```
 
