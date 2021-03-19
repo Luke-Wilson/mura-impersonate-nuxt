@@ -1,19 +1,26 @@
 # mura-impersonate-nuxt
+A package that allows a Mura super user to impersonate other Mura users.
 
 
+## Before you start
+Create a Mura-Nuxt project by following the instructions at https://github.com/murasoftware/mura-nuxtjs-decoupled.git
+
+Once you have your Mura-Nuxt implementation working, you can follow the below steps.
 
 ## Getting started
 1. Install mura-impersonate-nuxt into your nuxtjs directory
 ```
+cd /path/to/nuxtjs
 npm install --save mura-impersonate-nuxt
 ```
 
-2. Unzip the nuxtutils.zip into your mura directory
+2. Download the tarball and extract it into your mura directory
 ```
-unzip command goes here
+cd /path/to/mura
+tar xvzf /path/to/file/nuxtutils.tar
 ```
 
-3. Adjust the CFMLServlet in your web.xml to include the custom API paths. Add this line: `<url-pattern>/nuxtutils/index.cfm/*</url-pattern>`:
+3. Adjust the CFMLServlet in your web.xml to include the custom API paths by adding this line: `<url-pattern>/nuxtutils/index.cfm/*</url-pattern>`:
 
 ```
 <servlet-mapping>
@@ -28,7 +35,7 @@ unzip command goes here
 </servlet-mapping>
 ```
 
-4. In the `mura` service within your docker-compose.yml, load in the new nuxtutils directory and web.xml file:
+4. In the `mura` service within your `docker-compose.yml`, load in the new `nuxtutils` directory and `web.xml` file:
 ```
 volumes:
 	#- ../../mura/core:/var/www/core
@@ -46,9 +53,19 @@ docker-compose up -d
 
 6. Install Mura by loading http://localhost:8888/admin . Then login using the default admin credentials: (`admin`/`admin`)
 
-7. Create a new REST service called `s2usertoken`
+7. In the site settings within Mura admin, create a new REST service called `s2usertoken`. Copy the generated "Basic ..." auth string for the `basicAuthS2Token` variable in the next step.
 
-8. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
+8. Create a `env` property in your `nuxt.config.js` file if you don't already have one. Add the following variables:
+```
+env: {
+	rootpath: "http://localhost:8888",
+	impersonateDomain: ".localhost",
+	s2usertoken: "s2usertoken",
+	basicAuthS2Token:
+		"Basic ...authStringfromPreviousStep...",
+}
+```
+9. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
 ``` 
 <template>
 <div>
