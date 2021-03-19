@@ -51,11 +51,9 @@ volumes:
 docker-compose up -d
 ```
 
-6. Install Mura by loading http://localhost:8888/admin . Then login using the default admin credentials: (`admin`/`admin`)
+6. Log in to Mura admin. In the site settings, create a new REST service called `s2usertoken`. Copy the generated "Basic ..." auth string for the `basicAuthS2Token` variable in the next step.
 
-7. In the site settings within Mura admin, create a new REST service called `s2usertoken`. Copy the generated "Basic ..." auth string for the `basicAuthS2Token` variable in the next step.
-
-8. Create a `env` property in your `nuxt.config.js` file if you don't already have one. Add the following variables:
+7. Create a `env` property in your `nuxt.config.js` file if you don't already have one. Add the following variables:
 ```
 env: {
 	rootpath: "http://localhost:8888",
@@ -65,7 +63,8 @@ env: {
 		"Basic ...authStringfromPreviousStep...",
 }
 ```
-9. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
+
+8. In your `nuxtjs` directory, create the `pages/impersonate.vue` page:
 ``` 
 <template>
 <div>
